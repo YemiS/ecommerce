@@ -7,7 +7,10 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "develop:dev": "strapi develop",
+    "pm2:dev": "pm2 start npm --name myapp -- run develop:dev --watch"
+
   },
   "devDependencies": {},
   "dependencies": {
