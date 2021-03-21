@@ -6,7 +6,7 @@ jobs:
       image: ubuntu-1604:202007-01
     steps:
       - checkout
-      - run: ssh -oStictHostKeyChecking-no -v ${VPS_USER}@${IP} "./deploy.sh"
+      - run: ssh -oStrictHostKeyChecking-no -v ${VPS_USER}@${IP} "./deploy.sh"
 workflows:
   version: 2
   build-project:
