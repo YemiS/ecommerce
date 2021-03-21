@@ -2,8 +2,8 @@ version: 2.1
 
 jobs:
   build:
-    docker:
-      - image: arvind226/alpine-ssh
+    machine:
+      - image: ubuntu-2004:202008-01
     steps:
       - checkout
       - run: ssh -oStictHostKeyChecking-no -v ${VPS_USER}@${IP} "./deploy.sh"
