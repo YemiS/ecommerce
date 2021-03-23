@@ -8,7 +8,7 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "develop:dev": "strapi develop",
+    "develop:dev": "strapi start",
     "pm2:dev": "pm2 start npm --name myapp -- run develop:dev --watch"
 
   },
