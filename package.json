@@ -4,12 +4,12 @@
   "version": "0.1.0",
   "description": "A Strapi application",
   "scripts": {
+    "dev": "pm2 restart ecosystem.yml --env development",
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "develop:dev": "strapi start",
-    "pm2:dev": "pm2 start npm --name myapp -- run develop:dev --watch"
+    "develop:dev": "strapi start"
 
   },
   "devDependencies": {},
