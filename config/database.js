@@ -5,8 +5,8 @@ module.exports = ({ env }) => ({
       connector: 'bookshelf',
       settings: {
         client: 'mysql',
-        host: env('DATABASE_HOST', 'strapi-db.cns4g3fkdorf.eu-west-2.rds.amazonaws.com'),
-        port: env.int('DATABASE_PORT', 3306),
+        host: env('DATABASE_HOST', process.env.DATABASE_HOST),
+        port: env.int('DATABASE_PORT', process.env.DATABASE_PORT),
         database: env('DATABASE_NAME', 'Strapi'),
         username: env('DATABASE_USERNAME', 'rhodia'),
         password: env('DATABASE_PASSWORD', 'snookpassword'),
