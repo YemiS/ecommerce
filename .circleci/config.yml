@@ -15,7 +15,7 @@ jobs:
     steps:
       - checkout
       - run: echo "build project"
-      - run: ssh -i ${VPS_USER}@${IP} "~/cmsrepo_deploy.sh"
+      - run: ssh -i -v ${VPS_USER}@${IP} "~/cmsrepo_deploy.sh"
 workflows:
   version: 2
   build-project:
