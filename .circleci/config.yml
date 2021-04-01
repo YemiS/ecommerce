@@ -11,14 +11,14 @@ jobs:
       - run: npm install
   build:
     docker:
-      image: img/node:15.11.0
+      - image: cimg/node:15.11.0
     steps:
       - checkout
       - run: echo "build project"
       - run: ssh -i -v ${VPS_USER}@${IP} "~/cmsrepo_deploy.sh"
 workflows:
   version: 2
-  build-project:
+  test-build:
     jobs:
       - test
       - build:
