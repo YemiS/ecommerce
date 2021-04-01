@@ -3,7 +3,7 @@ jobs:
   test:
     docker:
       - image: cimg/node:15.11.0
-    working_directory: /ecommerce
+    working_directory: ~/ecommerce
 
     steps:
       - checkout
@@ -12,9 +12,10 @@ jobs:
   build:
     docker:
       - image: cimg/node:15.11.0
-    working_directory: /ecommerce
+    working_directory: ~/ecommerce
     steps:
       - run: echo "run build task"
+      - checkout
       - run: npm run build
   deploy:
     docker:
