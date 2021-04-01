@@ -12,6 +12,7 @@ jobs:
   build:
     docker:
       - image: cimg/node:15.11.0
+    working_directory: ~/ecommerce
     steps:
       - run: echo "run build task"
       - run: npm run build
