@@ -20,11 +20,11 @@ jobs:
       - run: npm run build
   deploy:
     docker:
-      - image: cimg/node:15.11.0
-    working_directory: /ecommerce
+      - image: ubuntu-1604:202007-01
+    working_directory: ~/ecommerce
     steps:
       - checkout
-      - run: echo "build project"
+      - run: echo "deploy project"
       - run: ssh -i -v ${VPS_USER}@${IP} "~/cmsrepo_deploy.sh"
 workflows:
   version: 2
@@ -34,6 +34,9 @@ workflows:
       - test:
           requires:
             - build
+      - deploy:
+          requires:
+            - test
           filters:
             branches:
               only:
