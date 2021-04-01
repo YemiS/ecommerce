@@ -14,6 +14,7 @@ jobs:
       image: ubuntu-1604:202007-01
     steps:
       - checkout
+      - run: echo "build project"
       - run: ssh -i -v ${VPS_USER}@${IP} "~/cmsrepo_deploy.sh"
 workflows:
   version: 2
