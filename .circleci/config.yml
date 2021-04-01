@@ -16,6 +16,7 @@ jobs:
     steps:
       - run: echo "run build task"
       - checkout
+      - run: npm install
       - run: npm run build
   deploy:
     docker:
@@ -29,8 +30,10 @@ workflows:
   version: 2
   test-build:
     jobs:
-      - test
-      - build:
+      - build
+      - test:
+          requires:
+            - build
           filters:
             branches:
               only:
